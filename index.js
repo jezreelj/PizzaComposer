@@ -1,9 +1,12 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const moment = require('moment');
-const port = 3000
+var path = require('path');
+const port = 3000;
+
+app.use(express.static(path.join(__dirname, 'routes')));
 
 var con = mysql.createConnection({
     host: 'localhost',
