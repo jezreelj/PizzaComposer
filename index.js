@@ -1,3 +1,5 @@
+'use-strict';
+
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
@@ -28,7 +30,7 @@ app.get('/', function(req,res){
   res.sendFile(__dirname+'/routes/index.html');
 });
 
-app.post('/', urlencodedParser, function (req, res){ //post = secure('SENSITIVE DATA NOT SHOWN IN URL')
+app.post('/', urlencodedParser, function (req, res) { //post = secure('SENSITIVE DATA NOT SHOWN IN URL')
   var lastname = req.body.lastname;
   var firstname = req.body.firstname;
   var phonenumber = req.body.phonenumber;
